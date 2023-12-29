@@ -5,10 +5,11 @@
 </head>
 
 <body>
+  
   新版QRCode<br>
   *為必填<br>
   <form id="sForm" name="sForm" method="GET" action="https://testpt.ctbcbank.com/sweb/tuition">
-  *vData:<input type='text' id='vData' name='vData' value=''><br>
+  *vData:<input type='text' id='vData' name='vData' value='881460060645982100'><br>
   fromSite:<input type='text' id='fromSite' name='fromSite' value=''><br>
   transType:<input type='text' id='transType' name='transType' value=''><br>
   <input type="submit" value="submit">
@@ -18,8 +19,8 @@
   新版代收行1 sit 外網（有sc才有設定sourceId、有sc才驗證schoolId是否存在於MAC_SCHOOL）<br>
   *為必填<br>
   <form id="sForm" name="sForm" method="GET">
-  *schoolId:<input type='text' id='schoolIDiPay' name='schoolID' value=''><br>
-  *account:<input type='text' id='accountiPay' name='account' value=''><br>
+  *schoolId:<input type='text' id='schoolIDiPay' name='schoolID' value='8814600606'><br>
+  *account:<input type='text' id='accountiPay' name='account' value='459820100'><br>
   fromSite:<input type='text' id='fromSiteiPay' name='fromSite' value=''><br>
   transType:<input type='text' id='transTypeiPay' name='transType' value=''><br>
   <input type="button" value="submit" onclick="submitIPaymentGW()">
@@ -29,8 +30,8 @@
   新版銀聯 sit 外網<br>
   *為必填<br>
   <form id="sForm" name="sForm" method="GET">
-  *schoolId:<input type='text' id='schoolIDuPOP' name='schoolID' value=''><br>
-  *account:<input type='text' id='accountuPOP' name='account' value=''><br>
+  *schoolId:<input type='text' id='schoolIDuPOP' name='schoolID' value='8814600606'><br>
+  *account:<input type='text' id='accountuPOP' name='account' value='459820100'><br>
   fromSite:<input type='text' id='fromSiteuPOP' name='fromSite' value=''><br>
   transType:<input type='text' id='transTypeuPOP' name='transType' value=''><br>
   <input type="button" value="submit" onclick="submitUPop()">
@@ -40,7 +41,7 @@
    舊版QRCode<br>
   *為必填<br>
   <form id="sForm" name="sForm" method="GET" action="https://testpt.ctbcbank.com/sweb/origin/tuition">
-  *vData:<input type='text' id='vData' name='vData' value=''><br>
+  *vData:<input type='text' id='vData' name='vData' value='881460060645982100'><br>
   fromSite:<input type='text' id='fromSite' name='fromSite' value=''><br>
   transType:<input type='text' id='transType' name='transType' value=''><br>
   <input type="submit" value="submit">
@@ -50,10 +51,10 @@
   舊版代收行1 sit 外網（有sc才有設定sourceId、有sc才驗證schoolId是否存在於MAC_SCHOOL）<br>
   *為必填<br>
   <form id="sForm" name="sForm" method="GET">
-  *schoolId:<input type='text' id='schoolIDiPay' name='schoolID' value=''><br>
-  *account:<input type='text' id='accountiPay' name='account' value=''><br>
-  fromSite:<input type='text' id='fromSiteiPay' name='fromSite' value=''><br>
-  transType:<input type='text' id='transTypeiPay' name='transType' value=''><br>
+  *schoolId:<input type='text' id='schoolIDiPayOld' name='schoolID' value='8814600606'><br>
+  *account:<input type='text' id='accountiPayOld' name='account' value='459820100'><br>
+  fromSite:<input type='text' id='fromSiteiPayOld' name='fromSite' value=''><br>
+  transType:<input type='text' id='transTypeiPayOld' name='transType' value=''><br>
   <input type="button" value="submit" onclick="submitIPaymentGWOld()">
   </form>
   <br><br>
@@ -61,10 +62,10 @@
   舊版銀聯 sit 外網<br>
   *為必填<br>
   <form id="sForm" name="sForm" method="GET">
-  *schoolId:<input type='text' id='schoolIDuPOP' name='schoolID' value=''><br>
-  *account:<input type='text' id='accountuPOP' name='account' value=''><br>
-  fromSite:<input type='text' id='fromSiteuPOP' name='fromSite' value=''><br>
-  transType:<input type='text' id='transTypeuPOP' name='transType' value=''><br>
+  *schoolId:<input type='text' id='schoolIDuPOPOld' name='schoolID' value='8814600606'><br>
+  *account:<input type='text' id='accountuPOPOld' name='account' value='459820100'><br>
+  fromSite:<input type='text' id='fromSiteuPOPOld' name='fromSite' value=''><br>
+  transType:<input type='text' id='transTypeuPOPOld' name='transType' value=''><br>
   <input type="button" value="submit" onclick="submitUPopOld()">
   </form>
   <br><br><br>
@@ -100,10 +101,10 @@ function submitUPop() {
 }
 
 	function submitIPaymentGWOld() {
-    var schoolId = document.getElementById("schoolIDiPay").value;
-    var account = document.getElementById("accountiPay").value;
-	var fromSite = document.getElementById("fromSiteiPay").value;
-    var transType = document.getElementById("transTypeiPay").value;
+    var schoolId = document.getElementById("schoolIDiPayOld").value;
+    var account = document.getElementById("accountiPayOld").value;
+	var fromSite = document.getElementById("fromSiteiPayOld").value;
+    var transType = document.getElementById("transTypeiPayOld").value;
 	
 	var formData = schoolId + account;
     var base64Encoded = btoa(formData);
@@ -114,10 +115,10 @@ function submitUPop() {
 }
 
 function submitUPopOld() {
-    var schoolId = document.getElementById("schoolIDuPOP").value;
-    var account = document.getElementById("accountuPOP").value;
-	var fromSite = document.getElementById("fromSiteuPOP").value;
-    var transType = document.getElementById("transTypeuPOP").value;
+    var schoolId = document.getElementById("schoolIDuPOPOld").value;
+    var account = document.getElementById("accountuPOPOld").value;
+	var fromSite = document.getElementById("fromSiteuPOPOld").value;
+    var transType = document.getElementById("transTypeuPOPOld").value;
 	
 	var formData = schoolId + account;
     var base64Encoded = btoa(formData);
