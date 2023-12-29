@@ -5,7 +5,7 @@
 </head>
 
 <body>
-  QRCode<br>
+  新版QRCode<br>
   *為必填<br>
   <form id="sForm" name="sForm" method="GET" action="https://testpt.ctbcbank.com/sweb/tuition">
   *vData:<input type='text' id='vData' name='vData' value='881460060645982100'><br>
@@ -15,7 +15,7 @@
   </form>
   <br><br>
 
-  代收行1 sit 外網（有sc才有設定sourceId、有sc才驗證schoolId是否存在於MAC_SCHOOL）<br>
+  新版代收行1 sit 外網（有sc才有設定sourceId、有sc才驗證schoolId是否存在於MAC_SCHOOL）<br>
   *為必填<br>
   <form id="sForm" name="sForm" method="GET">
   *schoolId:<input type='text' id='schoolIDiPay' name='schoolID' value='8814600606'><br>
@@ -26,7 +26,7 @@
   </form>
   <br><br>
 
-  銀聯 sit 外網<br>
+  新版銀聯 sit 外網<br>
   *為必填<br>
   <form id="sForm" name="sForm" method="GET">
   *schoolId:<input type='text' id='schoolIDuPOP' name='schoolID' value='8814600606'><br>
@@ -34,6 +34,38 @@
   fromSite:<input type='text' id='fromSiteuPOP' name='fromSite' value=''><br>
   transType:<input type='text' id='transTypeuPOP' name='transType' value=''><br>
   <input type="button" value="submit" onclick="submitUPop()">
+  </form>
+  <br><br><br>
+  
+   舊版QRCode<br>
+  *為必填<br>
+  <form id="sForm" name="sForm" method="GET" action="https://testpt.ctbcbank.com/sweb/origin/tuition">
+  *vData:<input type='text' id='vData' name='vData' value='881460060645982100'><br>
+  fromSite:<input type='text' id='fromSite' name='fromSite' value=''><br>
+  transType:<input type='text' id='transType' name='transType' value=''><br>
+  <input type="submit" value="submit">
+  </form>
+  <br><br>
+
+  舊版代收行1 sit 外網（有sc才有設定sourceId、有sc才驗證schoolId是否存在於MAC_SCHOOL）<br>
+  *為必填<br>
+  <form id="sForm" name="sForm" method="GET">
+  *schoolId:<input type='text' id='schoolIDiPay' name='schoolID' value='8814600606'><br>
+  *account:<input type='text' id='accountiPay' name='account' value='459820100'><br>
+  fromSite:<input type='text' id='fromSiteiPay' name='fromSite' value=''><br>
+  transType:<input type='text' id='transTypeiPay' name='transType' value=''><br>
+  <input type="button" value="submit" onclick="submitIPaymentGWOld()">
+  </form>
+  <br><br>
+
+  舊版銀聯 sit 外網<br>
+  *為必填<br>
+  <form id="sForm" name="sForm" method="GET">
+  *schoolId:<input type='text' id='schoolIDuPOP' name='schoolID' value='8814600606'><br>
+  *account:<input type='text' id='accountuPOP' name='account' value='459820100'><br>
+  fromSite:<input type='text' id='fromSiteuPOP' name='fromSite' value=''><br>
+  transType:<input type='text' id='transTypeuPOP' name='transType' value=''><br>
+  <input type="button" value="submit" onclick="submitUPopOld()">
   </form>
   <br><br><br>
   
@@ -63,6 +95,34 @@ function submitUPop() {
     var base64Encoded = btoa(formData);
 
     var targetUrl = "https://testpt.ctbcbank.com/sweb/tuition?tuipaymtUPOPData=" + base64Encoded + "&fromSite=" + fromSite + "&transType=" + transType;
+
+	window.location.href = targetUrl;
+}
+
+	function submitIPaymentGWOld() {
+    var schoolId = document.getElementById("schoolIDiPay").value;
+    var account = document.getElementById("accountiPay").value;
+	var fromSite = document.getElementById("fromSiteiPay").value;
+    var transType = document.getElementById("transTypeiPay").value;
+	
+	var formData = schoolId + account;
+    var base64Encoded = btoa(formData);
+
+    var targetUrl = "https://testpt.ctbcbank.com/sweb/origin/tuition?ipaymentGWData=" + base64Encoded + "&fromSite=" + fromSite + "&transType=" + transType;
+
+	window.location.href = targetUrl;
+}
+
+function submitUPopOld() {
+    var schoolId = document.getElementById("schoolIDuPOP").value;
+    var account = document.getElementById("accountuPOP").value;
+	var fromSite = document.getElementById("fromSiteuPOP").value;
+    var transType = document.getElementById("transTypeuPOP").value;
+	
+	var formData = schoolId + account;
+    var base64Encoded = btoa(formData);
+
+    var targetUrl = "https://testpt.ctbcbank.com/sweb/origin/tuition?tuipaymtUPOPData=" + base64Encoded + "&fromSite=" + fromSite + "&transType=" + transType;
 
 	window.location.href = targetUrl;
 }
